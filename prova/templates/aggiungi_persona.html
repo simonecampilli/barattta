@@ -1,0 +1,14 @@
+<!-- aggiungi_persona.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Aggiungi Persona{% endblock %}
+
+{% block content %}
+  <h2>Aggiungi Persona</h2>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Salva</button>
+  </form>
+{% endblock %}

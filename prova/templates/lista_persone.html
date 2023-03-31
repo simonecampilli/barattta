@@ -1,0 +1,33 @@
+<!-- templates/prova/lista_persone.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>Lista Persone</h1>
+    <a href="{% url 'aggiungi_persona' %}" class="btn btn-primary mb-3">Aggiungi Persona</a>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Cognome</th>
+          <th>Codice Fiscale</th>
+          <th>Stato</th>
+          <th>Nome Instagram</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for persona in persone %}
+        <tr>
+          <td>{{ persona.nome }}</td>
+          <td>{{ persona.cognome }}</td>
+          <td>{{ persona.codice_fiscale }}</td>
+          <td>{{ persona.stato }}</td>
+          <td>{{ persona.nome_instagram }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
